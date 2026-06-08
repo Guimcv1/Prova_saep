@@ -42,5 +42,3 @@ class Registro(Base):
     cliente_id = Column('cliente_id', ForeignKey(Cliente.id))
     produto_id = Column('produto_id', ForeignKey(Produto.id))
     data = Column('data',DateTime)
-
-Base.metadata.create_all(engine)
