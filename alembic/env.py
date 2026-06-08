@@ -2,12 +2,17 @@ from logging.config import fileConfig
 from models.model import Base
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-import os
+import os, sys
 from alembic import context
+from dotenv import load_dotenv
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in   use.
 config = context.config
+
+sys.path.append(os.getcwd())
+
+load_dotenv()
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

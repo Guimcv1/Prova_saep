@@ -11,7 +11,7 @@ db_password = os.getenv("DB_PASSWORD")
 db_host = os.getenv("DB_HOST",'localhost')
 db_port = os.getenv('DB_PORT','3306')
 
-URL = f"mysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+URL = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 engine = create_engine(URL,echo=True)
 
@@ -22,15 +22,15 @@ class Produto(Base):
     __tablename__ = "Produto"
 
     id = Column("id", Integer, autoincrement=True, primary_key=True)
-    nome = Column('nome', String)
+    nome = Column('nome', String(150))
     preco = Column('preco', Float)
-    validade = Column('validade', String)
+    validade = Column('validade', String(10))
 
 class Cliente(Base):
     __tablename__ = 'Cliente'
 
     id = Column("id", Integer, autoincrement=True, primary_key=True)
-    nome = Column('nome', String)
+    nome = Column('nome', String(150))
     telefone = Column('telefone', Integer)
     cpf = Column('cpf', Integer)
     vip = Column('vip', Boolean)
