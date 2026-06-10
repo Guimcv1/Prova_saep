@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "2dsmoca.tech",
+            "port": 3301,
+            "driver": "MySQL",
+            "name": "mysql_root",
+            "database": "null",
+            "username": "root",
+            "askForPassword": true
+        }
+    ]
+}

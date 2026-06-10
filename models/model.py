@@ -39,6 +39,6 @@ class Registro(Base):
     __tablename__ = 'Registro'
 
     id = Column('id', Integer, autoincrement=True, primary_key=True)
-    cliente_id = Column('cliente_id', ForeignKey(Cliente.id))
-    produto_id = Column('produto_id', ForeignKey(Produto.id))
-    data = Column('data',DateTime)
+    cliente_id = Column('cliente_id', Integer, ForeignKey('Cliente.id'))
+    produto_id = Column('produto_id', Integer, ForeignKey('Produto.id'))
+    data = Column('data', DateTime)
